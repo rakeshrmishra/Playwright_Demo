@@ -1,0 +1,36 @@
+[2021/08/08 11:56:19 Information]  Entering application 
+
+[2021/08/08 11:56:19 Information]  Hello 154 lines of code found 
+
+[2021/08/08 11:56:19 Information]  Generating code 
+
+[2021/08/08 11:56:19 Information]  time taken :00:00:00.0171829 
+
+[2021/08/08 11:56:19 Information]  Generating xml 
+
+[2021/08/08 11:56:19 Information]  Generating Helper class 
+
+[2021/08/09 11:06:07 Information]  Entering application 
+
+[2021/08/09 11:06:07 Information]  Hello 154 lines of code found 
+
+[2021/08/09 11:06:07 Information]  Generating code 
+
+[2021/08/09 11:06:07 Information]  time taken :00:00:00.0108850 
+
+[2021/08/09 11:06:07 Information]  Generating xml 
+
+[2021/08/09 11:06:07 Information]  Generating Helper class 
+
+[2021/08/09 17:14:20 Information]  Entering application 
+
+[2021/08/09 17:14:20 Information]  Hello 154 lines of code found 
+
+[2021/08/09 17:14:20 Information]  Generating code 
+
+[2021/08/09 17:14:20 Information]  time taken :00:00:00.0597813 
+
+[2021/08/09 17:14:20 Information]  Generating xml 
+
+[2021/08/09 17:14:20 Information]  Generating Helper class 
+

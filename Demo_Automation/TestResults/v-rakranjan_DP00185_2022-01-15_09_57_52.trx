@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="db280079-5a8f-4364-93f8-d6b8b78ed64a" name="v-rakranjan@DP00185 2022-01-15 09:57:52" runUser="FAREAST\v-rakranjan" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2022-01-15T09:57:52.7906852+05:30" queuing="2022-01-15T09:57:52.7906866+05:30" start="2022-01-15T09:55:54.7848153+05:30" finish="2022-01-15T09:57:57.1164586+05:30" />
+  <TestSettings name="default" id="56da46ad-638c-43ed-bc23-14004d97acf6">
+    <Deployment runDeploymentRoot="v-rakranjan_DP00185_2022-01-15_09_57_52" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="c40ca8d7-f54c-468c-acbc-e9736ea4226b" testId="f5db02b6-9e12-b1e9-7164-33b97de97480" testName="EnquiryNumber" computerName="DP00185" duration="00:01:47.8652742" startTime="2022-01-15T09:55:55.9220236+05:30" endTime="2022-01-15T09:57:52.1209263+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c40ca8d7-f54c-468c-acbc-e9736ea4226b">
+      <Output>
+        <StdOut>Starting TestSuite&#xD;
+Class Initialise started&#xD;
+Starting ClassInitialise&#xD;
+&#xD;
+
+
+TestContext Messages:
+Starting test:::EnquiryNumber</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="EnquiryNumber" storage="d:\playwright_demo\playwright_demo\demo_automation\bin\debug\net5.0\demo_automation.dll" id="f5db02b6-9e12-b1e9-7164-33b97de97480">
+      <Execution id="c40ca8d7-f54c-468c-acbc-e9736ea4226b" />
+      <TestMethod codeBase="D:\Playwright_Demo\Playwright_Demo\Demo_Automation\bin\Debug\net5.0\Demo_Automation.dll" adapterTypeName="executor://mstestadapter/v2" className="DemoTests.VerifyEnquiryNumber" name="EnquiryNumber" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="f5db02b6-9e12-b1e9-7164-33b97de97480" executionId="c40ca8d7-f54c-468c-acbc-e9736ea4226b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

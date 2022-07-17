@@ -1,0 +1,264 @@
+using System.Reflection;
+using System.IO;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Microsoft.Playwright;
+using System;
+using System.Threading.Tasks;
+
+
+namespace LeadCreation1.csproj
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        [TestMethod]
+        public async Task PDI()
+        {
+                    using var playwright = await Playwright.CreateAsync();
+        await using var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
+        {
+            Headless = false,
+        });
+        var context = await browser.NewContextAsync();
+        
+
+	// Open new page
+        var page = await context.NewPageAsync();
+        // Go to https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/wsfed?wtrealm=spn%3a00000015-0000-0000-c000-000000000000&wctx=WsFedOwinState%3dAQAAANCMnd8BFdERjHoAwE_Cl-sBAAAABPddMSiu70moxgYbA_MRpwAAAAACAAAAAAAQZgAAAAEAACAAAAAGfOlXBMJGdjxtDMfPYcTKU14-9kwnc_QUDr2Ua3OYMQAAAAAOgAAAAAIAACAAAABnWGnUSmphdvO4yPeGDNGTqnsMoUuc1I6UkDpOX1Q29VAAAAB5RVsWvo9vTwsa0VSPNeF3-vJz8hAvMaztFsRKNTmKtPLPAYaxhW_lfm7n7spHDn5k7aerLILbCEFfOFG-1ryiWchREYXHFxAjDNXlB4_UwEAAAACkC5-yEr3b0yePum36m4euL9KMqPkITMx0MWtOYoJalabbD_M5VyX9jdyxoaY1xUSz6b18i6od4AtOVKBDknMj&wa=wsignin1.0&wreply=https%3a%2f%2freuat01.sandbox.operations.dynamics.com%2f
+        await page.GotoAsync("https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/wsfed?wtrealm=spn%3a00000015-0000-0000-c000-000000000000&wctx=WsFedOwinState%3dAQAAANCMnd8BFdERjHoAwE_Cl-sBAAAABPddMSiu70moxgYbA_MRpwAAAAACAAAAAAAQZgAAAAEAACAAAAAGfOlXBMJGdjxtDMfPYcTKU14-9kwnc_QUDr2Ua3OYMQAAAAAOgAAAAAIAACAAAABnWGnUSmphdvO4yPeGDNGTqnsMoUuc1I6UkDpOX1Q29VAAAAB5RVsWvo9vTwsa0VSPNeF3-vJz8hAvMaztFsRKNTmKtPLPAYaxhW_lfm7n7spHDn5k7aerLILbCEFfOFG-1ryiWchREYXHFxAjDNXlB4_UwEAAAACkC5-yEr3b0yePum36m4euL9KMqPkITMx0MWtOYoJalabbD_M5VyX9jdyxoaY1xUSz6b18i6od4AtOVKBDknMj&wa=wsignin1.0&wreply=https%3a%2f%2freuat01.sandbox.operations.dynamics.com%2f");
+        // Go to https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/wsfed?wtrealm=spn%3a00000015-0000-0000-c000-000000000000&wctx=WsFedOwinState%3dAQAAANCMnd8BFdERjHoAwE_Cl-sBAAAABPddMSiu70moxgYbA_MRpwAAAAACAAAAAAAQZgAAAAEAACAAAAAGfOlXBMJGdjxtDMfPYcTKU14-9kwnc_QUDr2Ua3OYMQAAAAAOgAAAAAIAACAAAABnWGnUSmphdvO4yPeGDNGTqnsMoUuc1I6UkDpOX1Q29VAAAAB5RVsWvo9vTwsa0VSPNeF3-vJz8hAvMaztFsRKNTmKtPLPAYaxhW_lfm7n7spHDn5k7aerLILbCEFfOFG-1ryiWchREYXHFxAjDNXlB4_UwEAAAACkC5-yEr3b0yePum36m4euL9KMqPkITMx0MWtOYoJalabbD_M5VyX9jdyxoaY1xUSz6b18i6od4AtOVKBDknMj&wa=wsignin1.0&wreply=https%3a%2f%2freuat01.sandbox.operations.dynamics.com%2f&sso_reload=true
+        await page.GotoAsync("https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/wsfed?wtrealm=spn%3a00000015-0000-0000-c000-000000000000&wctx=WsFedOwinState%3dAQAAANCMnd8BFdERjHoAwE_Cl-sBAAAABPddMSiu70moxgYbA_MRpwAAAAACAAAAAAAQZgAAAAEAACAAAAAGfOlXBMJGdjxtDMfPYcTKU14-9kwnc_QUDr2Ua3OYMQAAAAAOgAAAAAIAACAAAABnWGnUSmphdvO4yPeGDNGTqnsMoUuc1I6UkDpOX1Q29VAAAAB5RVsWvo9vTwsa0VSPNeF3-vJz8hAvMaztFsRKNTmKtPLPAYaxhW_lfm7n7spHDn5k7aerLILbCEFfOFG-1ryiWchREYXHFxAjDNXlB4_UwEAAAACkC5-yEr3b0yePum36m4euL9KMqPkITMx0MWtOYoJalabbD_M5VyX9jdyxoaY1xUSz6b18i6od4AtOVKBDknMj&wa=wsignin1.0&wreply=https%3a%2f%2freuat01.sandbox.operations.dynamics.com%2f&sso_reload=true");
+        // Click [placeholder="Email, phone, or Skype"]
+        await page.ClickAsync("[placeholder=\"Email, phone, or Skype\"]");
+        // Fill [placeholder="Email, phone, or Skype"]
+        await page.FillAsync("[placeholder=\"Email, phone, or Skype\"]", "6121-KARTIK@dealer.royalenfield.com");
+        // Click text=Next
+        await page.RunAndWaitForNavigationAsync(async () =>
+        {
+            await page.ClickAsync("text=Next");
+        }/*, new PageWaitForNavigationOptions
+        {
+            UrlString = "https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/wsfed?wtrealm=spn%3a00000015-0000-0000-c000-000000000000&wctx=WsFedOwinState%3dAQAAANCMnd8BFdERjHoAwE_Cl-sBAAAABPddMSiu70moxgYbA_MRpwAAAAACAAAAAAAQZgAAAAEAACAAAAAGfOlXBMJGdjxtDMfPYcTKU14-9kwnc_QUDr2Ua3OYMQAAAAAOgAAAAAIAACAAAABnWGnUSmphdvO4yPeGDNGTqnsMoUuc1I6UkDpOX1Q29VAAAAB5RVsWvo9vTwsa0VSPNeF3-vJz8hAvMaztFsRKNTmKtPLPAYaxhW_lfm7n7spHDn5k7aerLILbCEFfOFG-1ryiWchREYXHFxAjDNXlB4_UwEAAAACkC5-yEr3b0yePum36m4euL9KMqPkITMx0MWtOYoJalabbD_M5VyX9jdyxoaY1xUSz6b18i6od4AtOVKBDknMj&wa=wsignin1.0&wreply=https%3a%2f%2freuat01.sandbox.operations.dynamics.com%2f&sso_reload=true"
+        }*/);
+        // Click [placeholder="Password"]
+        await page.ClickAsync("[placeholder=\"Password\"]");
+        // Fill [placeholder="Password"]
+        await page.FillAsync("[placeholder=\"Password\"]", "RE@12345");
+        // Click text=Sign in
+        await page.RunAndWaitForNavigationAsync(async () =>
+        {
+            await page.ClickAsync("text=Sign in");
+        }/*, new PageWaitForNavigationOptions
+        {
+            UrlString = "https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/login"
+        }*/);
+        // Assert.Equal("https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/login", page.Url);
+        // Click text=Yes
+        await page.RunAndWaitForNavigationAsync(async () =>
+        {
+            await page.ClickAsync("text=Yes");
+        }/*, new PageWaitForNavigationOptions
+        {
+            UrlString = "https://reuat01.sandbox.operations.dynamics.com/?cmp=REIN"
+        }*/);
+        // Assert.Equal("https://login.microsoftonline.com/kmsi", page.Url);
+        // Go to https://reuat01.sandbox.operations.dynamics.com/?cmp=REIN
+        await page.GotoAsync("https://reuat01.sandbox.operations.dynamics.com/?cmp=REIN");
+        // Click div[role="button"]:has-text("Sales")
+        await page.ClickAsync("div[role=\"button\"]:has-text(\"Sales\")");
+
+        // Click div[role="button"]:has-text("Active Bookings")
+        await page.ClickAsync("div[role=\"button\"]:has-text(\"Active Bookings\")");
+        // Click [aria-label="Filter"]
+        await page.ClickAsync("[aria-label=\"Filter\"]");
+        // Fill [aria-label="Filter"]
+        await page.FillAsync("[aria-label=\"Filter\"]", "BKG006121DE00015");
+        // Click text=/.*Booking Number "BKG006121DE00015".*/
+        await page.ClickAsync("text=/.*Booking Number \"BKG006121DE00015\".*/");
+        // Click [aria-label="Filter"]
+        await page.ClickAsync("[aria-label=\"Filter\"]");
+        // Click [aria-label="Filter"]
+        await page.ClickAsync("[aria-label=\"Filter\"]");
+        // Click [aria-label="Filter"]
+        await page.ClickAsync("[aria-label=\"Filter\"]");
+        // Press End
+        await page.PressAsync("[aria-label=\"Filter\"]", "End");
+        // Fill [aria-label="Filter"]
+        await page.FillAsync("[aria-label=\"Filter\"]", "BKG006121DE00015");
+        // Click text=/.*Booking Number "BKG006121DE00015".*/
+        await page.ClickAsync("text=/.*Booking Number \"BKG006121DE00015\".*/");
+        // Click text=Booking NumberBoking number ref. Booking Creation Date Change date Out of turn d >> [aria-label="Chassis Number"]
+        //await page.ClickAsync("text=Booking NumberBoking number ref. Booking Creation Date Change date Out of turn d >> [aria-label=\"Chassis Number\"]");
+         // Click text=Booking NumberBoking number ref. Booking Creation Date Change date Out of turn d >> [aria-label="Chassis Number"]
+        //await page.ClickAsync("text=Booking NumberBoking number ref. Booking Creation Date Change date Out of turn d >> [aria-label=\"Chassis Number\"]");
+      
+        // Click [aria-label="Reference SOR006121DE00005"]
+       // await page.ClickAsync("[aria-label=\"Reference SOR006121DE00005\"]");
+        
+
+	// Click button:has-text("KS")
+        await page.ClickAsync("button:has-text(\"KS\")");
+        // Click a[role="button"]:has-text("Sign out")
+        await page.ClickAsync("a[role=\"button\"]:has-text(\"Sign out\")");
+        // Assert.Equal("https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/wsfed?wtrealm=spn%3a00000015-0000-0000-c000-000000000000&wa=wsignout1.0&wreply=https%3a%2f%2freuat01.sandbox.operations.dynamics.com%3a443%2f%3ft%3d2021-08-09T16%253a41%253a11.6442205Z", page.Url);
+        // Open new page
+       // var page = await context.NewPageAsync();
+        // Go to https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/wsfed?wtrealm=spn%3a00000015-0000-0000-c000-000000000000&wctx=WsFedOwinState%3dAQAAANCMnd8BFdERjHoAwE_Cl-sBAAAABPddMSiu70moxgYbA_MRpwAAAAACAAAAAAAQZgAAAAEAACAAAABUvd9zk25IJlL39czQ4XBRdo2sQXm2dpYc_uHQ-NHv6QAAAAAOgAAAAAIAACAAAABdd0EdMzuIncC-1g0okHRbtdvd1twnNoRKWaTQV07JlHAAAABKeDmqHFNwafmSvX3UJTmlTUxdz3YgTF4iSXWS6GpVQyBN23sa-3KF4QjxhjYMcQFmweTdZuY8MGM7fiESfsthjad9Z-RvEDAo2tKW-8V8MSweCdlzo3mnpdgPZsZBPu0uVdeyv9jeE4rU8fq7AhN3QAAAAG0OPlkR4NBJkojAEXyBAGMeBWi1qQxG0SAigL9jmgMDkIe30-jMJHjUhV0KJMAv6WKo46Wg_Ey9SGaNWMCWjvI&wa=wsignin1.0&wreply=https%3a%2f%2freuat01.sandbox.operations.dynamics.com%2f
+        await page.GotoAsync("https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/wsfed?wtrealm=spn%3a00000015-0000-0000-c000-000000000000&wctx=WsFedOwinState%3dAQAAANCMnd8BFdERjHoAwE_Cl-sBAAAABPddMSiu70moxgYbA_MRpwAAAAACAAAAAAAQZgAAAAEAACAAAABUvd9zk25IJlL39czQ4XBRdo2sQXm2dpYc_uHQ-NHv6QAAAAAOgAAAAAIAACAAAABdd0EdMzuIncC-1g0okHRbtdvd1twnNoRKWaTQV07JlHAAAABKeDmqHFNwafmSvX3UJTmlTUxdz3YgTF4iSXWS6GpVQyBN23sa-3KF4QjxhjYMcQFmweTdZuY8MGM7fiESfsthjad9Z-RvEDAo2tKW-8V8MSweCdlzo3mnpdgPZsZBPu0uVdeyv9jeE4rU8fq7AhN3QAAAAG0OPlkR4NBJkojAEXyBAGMeBWi1qQxG0SAigL9jmgMDkIe30-jMJHjUhV0KJMAv6WKo46Wg_Ey9SGaNWMCWjvI&wa=wsignin1.0&wreply=https%3a%2f%2freuat01.sandbox.operations.dynamics.com%2f");
+        // Go to https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/oauth2/authorize?client_id=00000007-0000-0000-c000-000000000000&response_mode=form_post&response_type=code+id_token&scope=openid+profile&state=OpenIdConnect.AuthenticationProperties%3dMAAAAIjxSSnuCxHrgzG9lzq26Xs5W5n-sWwBhsWy3M2RLBlL3Z-MjqQDhvOxr4xIrg1KKgEAAAABAAAACS5yZWRpcmVjdB1odHRwczovL3JlLmNybTguZHluYW1pY3MuY29tLw%26RedirectTo%3dMAAAAIjxSSnuCxHrgzG9lzq26Xs1U8i01TGhX0kzBZYRQ3TEyg0PjUnxA6HMS2X7cqKYkmh0dHBzOi8vcmUuY3JtOC5keW5hbWljcy5jb20v%26RedirectToForMcas%3dhttps%253a%252f%252fre.crm8.dynamics.com%252f&nonce=637641241116453028.MzU0YmI3OTktNGFlZS00NGFmLThlZTktYjM5OGIwM2I2ZTVkN2VjMDM3MDgtMjI1Ny00OThjLWJhYjktNzg2MTk1MzU0OTY2&redirect_uri=https%3a%2f%2fmaa--indcrmlivesg607.crm8.dynamics.com%2f&max_age=86400
+        await page.GotoAsync("https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/oauth2/authorize?client_id=00000007-0000-0000-c000-000000000000&response_mode=form_post&response_type=code+id_token&scope=openid+profile&state=OpenIdConnect.AuthenticationProperties%3dMAAAAIjxSSnuCxHrgzG9lzq26Xs5W5n-sWwBhsWy3M2RLBlL3Z-MjqQDhvOxr4xIrg1KKgEAAAABAAAACS5yZWRpcmVjdB1odHRwczovL3JlLmNybTguZHluYW1pY3MuY29tLw%26RedirectTo%3dMAAAAIjxSSnuCxHrgzG9lzq26Xs1U8i01TGhX0kzBZYRQ3TEyg0PjUnxA6HMS2X7cqKYkmh0dHBzOi8vcmUuY3JtOC5keW5hbWljcy5jb20v%26RedirectToForMcas%3dhttps%253a%252f%252fre.crm8.dynamics.com%252f&nonce=637641241116453028.MzU0YmI3OTktNGFlZS00NGFmLThlZTktYjM5OGIwM2I2ZTVkN2VjMDM3MDgtMjI1Ny00OThjLWJhYjktNzg2MTk1MzU0OTY2&redirect_uri=https%3a%2f%2fmaa--indcrmlivesg607.crm8.dynamics.com%2f&max_age=86400");
+        // Click div[role="button"]:has-text("Use another account")
+        await page.ClickAsync("div[role=\"button\"]:has-text(\"Use another account\")");
+        // Assert.Equal("https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/oauth2/authorize?client_id=00000007-0000-0000-c000-000000000000&response_mode=form_post&response_type=code+id_token&scope=openid+profile&state=OpenIdConnect.AuthenticationProperties%3dMAAAAIjxSSnuCxHrgzG9lzq26Xs5W5n-sWwBhsWy3M2RLBlL3Z-MjqQDhvOxr4xIrg1KKgEAAAABAAAACS5yZWRpcmVjdB1odHRwczovL3JlLmNybTguZHluYW1pY3MuY29tLw%26RedirectTo%3dMAAAAIjxSSnuCxHrgzG9lzq26Xs1U8i01TGhX0kzBZYRQ3TEyg0PjUnxA6HMS2X7cqKYkmh0dHBzOi8vcmUuY3JtOC5keW5hbWljcy5jb20v%26RedirectToForMcas%3dhttps%253a%252f%252fre.crm8.dynamics.com%252f&nonce=637641241116453028.MzU0YmI3OTktNGFlZS00NGFmLThlZTktYjM5OGIwM2I2ZTVkN2VjMDM3MDgtMjI1Ny00OThjLWJhYjktNzg2MTk1MzU0OTY2&redirect_uri=https%3a%2f%2fmaa--indcrmlivesg607.crm8.dynamics.com%2f&max_age=86400", page.Url);
+        // Click [placeholder="Email, phone, or Skype"]
+        await page.ClickAsync("[placeholder=\"Email, phone, or Skype\"]");
+        // Fill [placeholder="Email, phone, or Skype"]
+        await page.FillAsync("[placeholder=\"Email, phone, or Skype\"]", "6122-KESHAVANANDA@dealer.royalenfield.com");
+        // Click text=Next
+        await page.RunAndWaitForNavigationAsync(async () =>
+        {
+            await page.ClickAsync("text=Next");
+        }/*, new PageWaitForNavigationOptions
+        {
+            UrlString = "https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/oauth2/authorize?client_id=00000007-0000-0000-c000-000000000000&response_mode=form_post&response_type=code+id_token&scope=openid+profile&state=OpenIdConnect.AuthenticationProperties%3dMAAAAIjxSSnuCxHrgzG9lzq26Xs5W5n-sWwBhsWy3M2RLBlL3Z-MjqQDhvOxr4xIrg1KKgEAAAABAAAACS5yZWRpcmVjdB1odHRwczovL3JlLmNybTguZHluYW1pY3MuY29tLw%26RedirectTo%3dMAAAAIjxSSnuCxHrgzG9lzq26Xs1U8i01TGhX0kzBZYRQ3TEyg0PjUnxA6HMS2X7cqKYkmh0dHBzOi8vcmUuY3JtOC5keW5hbWljcy5jb20v%26RedirectToForMcas%3dhttps%253a%252f%252fre.crm8.dynamics.com%252f&nonce=637641241116453028.MzU0YmI3OTktNGFlZS00NGFmLThlZTktYjM5OGIwM2I2ZTVkN2VjMDM3MDgtMjI1Ny00OThjLWJhYjktNzg2MTk1MzU0OTY2&redirect_uri=https%3a%2f%2fmaa--indcrmlivesg607.crm8.dynamics.com%2f&max_age=86400"
+        }*/);
+        // Click [placeholder="Password"]
+        await page.ClickAsync("[placeholder=\"Password\"]");
+        // Fill [placeholder="Password"]
+        await page.FillAsync("[placeholder=\"Password\"]", "RE@12345");
+        // Click text=Sign in
+        await page.RunAndWaitForNavigationAsync(async () =>
+        {
+            await page.ClickAsync("text=Sign in");
+        }/*, new PageWaitForNavigationOptions
+        {
+            UrlString = "https://re.crm8.dynamics.com/main.aspx?forceUCI=1&pagetype=apps"
+        }*/);
+        // Assert.Equal("https://login.microsoftonline.com/624a95d9-8c90-4097-95cc-1f953608f9c4/login", page.Url);
+        // Click text=Service Manager
+        await page.RunAndWaitForNavigationAsync(async () =>
+        {
+            await page.Frame("AppLandingPage").ClickAsync("text=Service Manager");
+        }/*, new FrameWaitForNavigationOptions
+        {
+            UrlString = "https://re.crm8.dynamics.com/main.aspx?appid=ecbc2a97-e22a-e911-a984-000d3af2837b&pagetype=dashboard&id=f0ab47eb-85c1-e811-a962-000d3af068d4&type=system&_canOverride=true"
+        }*/);
+        // Assert.Equal("https://re.crm8.dynamics.com/main.aspx?appid=ecbc2a97-e22a-e911-a984-000d3af2837b", page.Url);
+        // Click [aria-label="Advanced Find"]
+        var page1 = await page.RunAndWaitForPopupAsync(async () =>
+        {
+            await page.ClickAsync("[aria-label=\"Advanced Find\"]");
+        });
+        // Go to https://re.crm8.dynamics.com/main.aspx?appid=ecbc2a97-e22a-e911-a984-000d3af2837b&pagetype=AdvancedFind#821292490
+        await page1.GotoAsync("https://re.crm8.dynamics.com/main.aspx?appid=ecbc2a97-e22a-e911-a984-000d3af2837b&pagetype=AdvancedFind#821292490");
+    // Select msdyn_customerasset
+        await page1.Frame("contentIFrame0").SelectOptionAsync("select[name=\"slctPrimaryEntity\"]", new[] { "msdyn_customerasset" });
+        // Select xrm_vehiclechassisnumber
+        await page1.Frame("contentIFrame0").SelectOptionAsync("[aria-label=\"SelectInputBehavior\"]", new[] { "xrm_vehiclechassisnumber" });
+        // Click input[type="text"]
+        await page1.Frame("contentIFrame0").ClickAsync("input[type=\"text\"]");
+        // Fill input[type="text"]
+        await page1.Frame("contentIFrame0").FillAsync("input[type=\"text\"]", "ME3Y4A5F1MB003061");
+        // Click text=ResultsResultsSee the results of your query.
+        await page1.ClickAsync("text=ResultsResultsSee the results of your query.");
+        // Click img[alt="Checkbox"]
+        await page1.Frame("resultFrame").ClickAsync("img[alt=\"Checkbox\"]");
+        // Click text=RunWorkflowRun WorkflowRun a workflow for this Maintenance Asset. View the statu
+        await page1.ClickAsync("text=RunWorkflowRun WorkflowRun a workflow for this Maintenance Asset. View the statu");
+        // Click [aria-label="checkbox unchecked Customer Asset : PDI Create Process"] img[alt="Checkbox"]
+        await page1.Frame("InlineDialog_Iframe").ClickAsync("[aria-label=\"checkbox unchecked Customer Asset : PDI Create Process\"] img[alt=\"Checkbox\"]");
+        // Click #butBegin
+        await page1.Frame("InlineDialog_Iframe").ClickAsync("#butBegin");
+        // Click text=OK
+        await page1.Frame("InlineDialog1_Iframe").ClickAsync("text=OK");
+        // Click text=Pending for PDI
+        await page1.Frame("resultFrame").ClickAsync("text=Pending for PDI");
+        // Close page
+        await page1.CloseAsync();
+
+        // Click [aria-label="Service Manager Dashboard"]
+        await page.ClickAsync("[aria-label=\"Service Manager Dashboard\"]");
+        // Click text=PDI Supervisor Dashboard
+        await page.ClickAsync("text=PDI Supervisor Dashboard");
+        // Assert.Equal("https://re.crm8.dynamics.com/main.aspx?appid=ecbc2a97-e22a-e911-a984-000d3af2837b&pagetype=dashboard&id=7aeced6c-88c1-e811-a962-000d3af068d4&type=system", page1.Url);
+        // Click [placeholder="Quick find"]
+        await page.ClickAsync("[placeholder=\"Quick find\"]");
+        // Fill [placeholder="Quick find"]
+        await page.FillAsync("[placeholder=\"Quick find\"]", "ME3Y4A5F1MB003061");
+        // Click [aria-label="Start search"]
+        await page.ClickAsync("[aria-label=\"Start search\"]");
+        // Click [placeholder="Quick find"]
+        await page.ClickAsync("[placeholder=\"Quick find\"]");
+        // Click [placeholder="Quick find"]
+        await page.ClickAsync("[placeholder=\"Quick find\"]");
+        // Click [aria-label="Clear search"]
+        await page.ClickAsync("[aria-label=\"Clear search\"]");
+        // Click text=
+        await page.ClickAsync("text=");
+        // Click text=Job Cards
+        await page.RunAndWaitForNavigationAsync(async () =>
+        {
+            await page.ClickAsync("text=Job Cards");
+        }/*, new PageWaitForNavigationOptions
+        {
+            UrlString = "https://re.crm8.dynamics.com/main.aspx?appid=ecbc2a97-e22a-e911-a984-000d3af2837b&pagetype=entitylist&etn=msdyn_workorder&viewid=f5a1983a-78c1-e811-a962-000d3af068d4&viewType=1039"
+        }*/);
+        // Assert.Equal("https://re.crm8.dynamics.com/main.aspx?appid=ecbc2a97-e22a-e911-a984-000d3af2837b&pagetype=entitylist&etn=msdyn_workorder", page1.Url);
+        // Click [placeholder="Quick find"]
+        await page.ClickAsync("[placeholder=\"Quick find\"]");
+        // Fill [placeholder="Quick find"]
+        await page.FillAsync("[placeholder=\"Quick find\"]", "ME3Y4A5F1MB003061");
+        // Click [aria-label="Start search"]
+        await page.ClickAsync("[aria-label=\"Start search\"]");
+        // Click text=Dashboards
+        await page.ClickAsync("text=Dashboards");
+        // Assert.Equal("https://re.crm8.dynamics.com/main.aspx?appid=ecbc2a97-e22a-e911-a984-000d3af2837b&pagetype=dashboard&id=f0ab47eb-85c1-e811-a962-000d3af068d4&type=system&_canOverride=true", page1.Url);
+        // Click [aria-label="Service Manager Dashboard"]
+        await page.ClickAsync("[aria-label=\"Service Manager Dashboard\"]");
+        // Click [aria-label="PDI Supervisor Dashboard"]
+        await page.ClickAsync("[aria-label=\"PDI Supervisor Dashboard\"]");
+        // Assert.Equal("https://re.crm8.dynamics.com/main.aspx?appid=ecbc2a97-e22a-e911-a984-000d3af2837b&pagetype=dashboard&id=7aeced6c-88c1-e811-a962-000d3af068d4&type=system", page1.Url);
+        // Click [placeholder="Quick find"]
+        await page.ClickAsync("[placeholder=\"Quick find\"]");
+        // Click text=ME3Y4A5F1MB003061
+        await page.ClickAsync("text=ME3Y4A5F1MB003061");
+        // Assert.Equal("https://re.crm8.dynamics.com/main.aspx?appid=ecbc2a97-e22a-e911-a984-000d3af2837b&pagetype=entityrecord&etn=msdyn_workorder&id=cb12669b-15f9-eb11-94ef-000d3af2a99d", page1.Url);
+        // Click [aria-label="Kilometers"]
+        await page.ClickAsync("[aria-label=\"Kilometers\"]");
+        // Fill [aria-label="Kilometers"]
+        await page.FillAsync("[aria-label=\"Kilometers\"]", "3");
+        // Click [aria-label="Battery SI Number"]
+        await page.ClickAsync("[aria-label=\"Battery SI Number\"]");
+        // Fill [aria-label="Battery SI Number"]
+        await page.FillAsync("[aria-label=\"Battery SI Number\"]", "22");
+        // Click text=PDI ChecklistPDI Checklist
+        await page.ClickAsync("text=PDI ChecklistPDI Checklist");
+        // Assert.Equal("https://re.crm8.dynamics.com/main.aspx?appid=ecbc2a97-e22a-e911-a984-000d3af2837b&pagetype=entityrecord&etn=msdyn_workorder&id=cb12669b-15f9-eb11-94ef-000d3af2a99d", page1.Url);
+        // Select 1
+        await page.SelectOptionAsync("[aria-label=\"PDI Done\"]", new[] { "1" });
+        // Click [aria-label="Tyre Number(Front)"]
+        await page.ClickAsync("[aria-label=\"Tyre Number(Front)\"]");
+        // Fill [aria-label="Tyre Number(Front)"]
+        await page.FillAsync("[aria-label=\"Tyre Number(Front)\"]", "22");
+        // Select 2
+        await page.SelectOptionAsync("[aria-label=\"Tyre Make Front\"]", new[] { "2" });
+        // Click [aria-label="Key Number"]
+        await page.ClickAsync("[aria-label=\"Key Number\"]");
+        // Fill [aria-label="Key Number"]
+        await page.FillAsync("[aria-label=\"Key Number\"]", "11");
+        // Select 2
+        await page.SelectOptionAsync("[aria-label=\"Battery Make\"]", new[] { "2" });
+        // Click [aria-label="Tyre Number (Rear)"]
+        await page.ClickAsync("[aria-label=\"Tyre Number (Rear)\"]");
+        // Fill [aria-label="Tyre Number (Rear)"]
+        await page.FillAsync("[aria-label=\"Tyre Number (Rear)\"]", "21");
+        // Select 3
+        await page.SelectOptionAsync("[aria-label=\"Tyre Make Rear\"]", new[] { "3" });
+        // Click [aria-label="Save"]
+        await page.ClickAsync("[aria-label=\"Save\"]");
+        // Click text=PDI Completed
+        await page.ClickAsync("text=PDI Completed");
+           
+                 }
+    }
+}

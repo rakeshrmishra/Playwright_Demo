@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<RunSettings>
+  <TestRunParameters>
+    <Parameter name="SalesManagerID" value="6121-KARTIK@dealer.royalenfield.com" />
+    <Parameter name="SalesManagerPwd" value="RE@12345" />
+  </TestRunParameters>
+</RunSettings>

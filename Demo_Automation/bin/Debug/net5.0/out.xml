@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DocumentElement xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Elements>
+		<Element>CRMUrl</Element>
+		<ID>https://wicsit.crm9.dynamics.com</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+		<Element>RE_CRMUrl</Element>
+		<ID>https://re.crm8.dynamics.com</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+		<Element>FandOUrl</Element>
+		<ID>https://reuat01.sandbox.operations.dynamics.com</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+	<Elements>
+		<Element>MSFTLoginAccount</Element>
+		<ID>[name=loginfmt]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+		<Value>v-rakranjan@microsoft.com</Value>
+	</Elements>
+  <Elements>
+    <Element>MSFTLoginNextButton</Element>
+    <ID>text=Next</ID>
+    <TestCaseNumber>CRMLogin</TestCaseNumber>
+  </Elements>
+  <Elements>
+		<Element>CRMPassword</Element>
+		<ID>//span[text()='Password']</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+		<Element>FandOPassword</Element>
+		<ID>//*[@name='passwd']</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+    <Element>MSFTLoginPassword</Element>
+    <ID>[placeholder="Password"]</ID>
+    <TestCaseNumber>CRMLogin</TestCaseNumber>
+    <Value>RE@12345</Value>
+  </Elements>
+  <Elements>
+    <Element>MSFTSignInButton</Element>
+    <ID>//span[text()='Sign in']</ID>
+    <TestCaseNumber>CRMLogin</TestCaseNumber>
+  </Elements>
+  <Elements>
+    <Element>MSFTRE_SignInButton</Element>
+    <ID>//*[@type="submit"]</ID>
+    <TestCaseNumber>CRMLogin</TestCaseNumber>
+  </Elements>
+  <Elements>
+    <Element>MSFTLoginPasswordRemember</Element>
+    <ID>text=Yes</ID>
+    <TestCaseNumber>CRMLogin</TestCaseNumber>
+  </Elements>
+  <Elements>
+		<Element>CRMFamilies</Element>
+		<ID>text=Families</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+		<Element>CRMFamilies_NewBtn</Element>
+		<ID>[aria-label="New"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+    <Element>CRMFamilies_FamilyName</Element>
+    <ID>[aria-label="Family Name"]</ID>
+    <TestCaseNumber>CRMLogin</TestCaseNumber>
+    <Value>Test507</Value>
+  </Elements>
+  <Elements>
+    <Element>CRMFamilies_FamilySize</Element>
+    <ID>[aria-label="Family Size"]</ID>
+    <TestCaseNumber>CRMLogin</TestCaseNumber>
+    <Value>2</Value>
+  </Elements>
+  <Elements>
+    <Element>CRMFamilies_AddressLine1</Element>
+    <ID>[aria-label="Address Line 1"]</ID>
+    <TestCaseNumber>CRMLogin</TestCaseNumber>
+    <Value>Abernathy-hill-79931</Value>
+  </Elements>
+  <Elements>
+    <Element>ClickonZipCode</Element>
+    <ID>[aria-label=\"City-County-ZIP Code, Lookup\"]</ID>
+    <TestCaseNumber>CRMLogin</TestCaseNumber>
+    <Value>79311</Value>
+  </Elements>
+  <Elements>
+    <Element>SearchZipCode</Element>
+    <ID>[placeholder=\"Look for City / County / ZIP Code\"]", "79931]</ID>
+    <TestCaseNumber>CRMLogin</TestCaseNumber>
+    <Value>79311</Value>
+  </Elements>
+  <Elements>
+    <Element>SelectZipCode</Element>
+    <ID>text=EL PASO-EL PASO -79931</ID>
+    <TestCaseNumber>CRMLogin</TestCaseNumber>
+    <Value>79311</Value>
+  </Elements>
+  <Elements>
+    <Element>CRMFamilies_PhoneNumber</Element>
+    <ID>[aria-label="Primary Phone Number"]</ID>
+    <TestCaseNumber>CRMLogin</TestCaseNumber>
+    <Value>3037231722</Value>
+  </Elements>
+  <Elements>
+    <Element>CRMFamilies_PhonePrefences</Element>
+    <ID>[aria-label=\"Preferred Method of Contact\"]</ID>
+    <TestCaseNumber>CRMLogin</TestCaseNumber>
+    <Value>3</Value>
+  </Elements>
+  <Elements>
+		<Element>CRMFamilies_MailingAddress</Element>
+		<ID>[aria-label="Mailing Address same as the Physical Address"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+		<Element>CRM_Save</Element>
+		<ID>text=Save</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+		<Element>SaveAndCloseBtn</Element>
+		<ID>[aria-label=\"Save &amp; Close\"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+		<Element>FamilyTitle</Element>
+		<ID>//h1[@data-id="header_title"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+		<Element>ExistingFamilyName</Element>
+		<ID>[aria-label="Search this view"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+    <Value>Test505</Value>
+	</Elements>
+  <Elements>
+		<Element>ExistingFamilySearchBtn</Element>
+		<ID>[aria-label="Start search"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+		<Element>ClickonFamilyName</Element>
+		<ID>[data-id="cell-0-2"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+		<Element>AddPaticipant</Element>
+		<ID>[aria-label="New Participant. Add New Participant"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+		<Element>AddNewParticipant</Element>
+		<ID>[aria-label="New Participant. Add New Participant"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+		<Element>FirstName</Element>
+		<ID>[aria-label="First Name"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+    <Value>Test</Value>
+	</Elements>
+  <Elements>
+		<Element>LastName</Element>
+		<ID>[aria-label="Last Name"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+    <Value>Adult</Value>
+	</Elements>
+  <Elements>
+		<Element>DateofBirth</Element>
+		<ID>[aria-label="Date of Date of Birth"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+    <Value>"10/10/2000"</Value>
+	</Elements>
+  <Elements>
+		<Element>UsePasswordInstead</Element>
+		<ID>div[role="button"]:has-text("Use another account")</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+		<Element>REDealershipSalesApp</Element>
+		<ID>//*[@title="RE Dealership Sales App"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+		<Element>CRMBooking</Element>
+		<ID>//*[text()='Booking']</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  <Elements>
+	<Element>Quickfind</Element>
+		<ID>[placeholder="Quick find"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+    <Value>"BKG006121DE00018"</Value>
+	</Elements>
+  <Elements>
+		<Element>StartSearch</Element>
+		<ID>[aria-label="Start search"]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+    <Elements>
+		<Element>ClickOnSearchRecord</Element>
+		<ID>text=8899556633</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  	<Elements>
+		<Element>LeadEnquiryNumber</Element>
+		<ID>//div[@data-id="form-header"]//div[text()='Enquiry Number']/preceding-sibling::div</ID>
+	</Elements>
+  <Elements>
+		<Element>LblFilter</Element>
+		<ID>[aria-label="Filter"]</ID>
+	</Elements>
+	<Elements>
+		<Element>FandOEnquiryNumber</Element>
+		<ID>[aria-label="Enquiry Number"]</ID>
+	</Elements>
+  	<Elements>
+		<Element>FandOSalesApp</Element>
+		<ID>//*[contains(@id,"PwCSalesWorkspaceTile_text")]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+  	<Elements>
+		<Element>FandOActiveBooking</Element>
+		<ID>//*[contains(@id,"PwcActiveBookings_text")]</ID>
+		<TestCaseNumber>CRMLogin</TestCaseNumber>
+	</Elements>
+</DocumentElement>
+
